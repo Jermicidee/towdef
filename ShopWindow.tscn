@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://hsgi0tmtrulj"]
+
+[ext_resource type="Script" path="res://ShopWindow.gd" id="1_80x0a"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_80x0a")
+
+[node name="ShowUnitsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 688.0
+offset_right = 110.0
+offset_bottom = 763.0
+text = "Shop"
+
+[node name="UnitWindow" type="Window" parent="."]
+transparent_bg = true
+title = "Shop"
+position = Vector2i(0, 36)
+size = Vector2i(350, 350)
+visible = false
+theme_override_colors/title_color = Color(1, 0, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="UnitWindow"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="ShowUnitsButton" to="." method="_on_show_units_button_pressed"]
